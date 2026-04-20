@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Покос. Спил. Порядок. — напишите нам</title>
+<meta name="description" content="Покос травы, спил деревьев, уборка участков. Выезд бесплатно. Минск и область. +375 33 382-62-22">
+<meta name="theme-color" content="#2d4a2b">
+
+<meta property="og:title" content="Покос. Спил. Порядок.">
+<meta property="og:description" content="Покос, спил, уборка участков. Выезд бесплатно. Напишите в удобный мессенджер.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%232d4a2b'/%3E%3Ctext x='16' y='23' font-family='system-ui,sans-serif' font-size='20' font-weight='900' text-anchor='middle' fill='%23fff'%3E%D0%9F%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#efe9d9;
+    --ink:#0f0f0f;
+    --ink-soft:#3a3a3a;
+    --green:#2d4a2b;
+    --line:rgba(15,15,15,.18);
+    --wa:#25D366;
+    --vb:#7360F2;
+    --tg:#229ED9;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:16px;
+    line-height:1.45;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  /* Top accent band — повторяет тонкую зелёную полосу с листовки */
+  .topbar{
+    width:100%;
+    height:10px;
+    background:var(--green);
+  }
+
+  main{
+    width:100%;
+    max-width:560px;
+    padding:28px 22px 32px;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* --- Hero --- */
+  .hero h1{
+    font-family:'Unbounded',system-ui,sans-serif;
+    font-weight:900;
+    font-size:clamp(44px,13vw,72px);
+    line-height:.98;
+    letter-spacing:-.02em;
+    margin:0;
+  }
+  .hero h1 span{display:block}
+  .hero h1 .w2{
+    color:var(--green);
+    font-style:italic;
+  }
+  .hero p{
+    margin:18px 0 0;
+    color:#2a2a2a;
+    font-size:clamp(17px,4.6vw,20px);
+    font-weight:500;
+    line-height:1.4;
+    max-width:32ch;
+  }
+
+  /* --- CTA: messenger tiles --- */
+  .cta{
+    margin-top:32px;
+  }
+  .cta-label{
+    font-family:'Unbounded',system-ui,sans-serif;
+    font-weight:700;
+    font-size:22px;
+    line-height:1.15;
+    margin:0 0 14px;
+    letter-spacing:-.01em;
+  }
+
+  .msgs{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+  }
+  .msg{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    padding:24px 10px 20px;
+    min-height:132px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:-.005em;
+    transition:transform .08s ease, filter .2s ease;
+  }
+  .msg:hover{filter:brightness(1.06)}
+  .msg:active{transform:scale(.97)}
+  .msg:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+  .msg svg{
+    width:38px;height:38px;
+    fill:currentColor;
+    display:block;
+  }
+  .msg.wa{background:var(--wa)}
+  .msg.vb{background:var(--vb)}
+  .msg.tg{background:var(--tg)}
+
+  /* --- Call row --- */
+  .call{
+    margin-top:10px;
+    background:var(--green);
+    color:#fff;
+    padding:18px 20px;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .call-icon{
+    width:48px;height:48px;
+    flex:0 0 48px;
+    background:rgba(255,255,255,.14);
+    display:grid;place-items:center;
+  }
+  .call-icon svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .call-text{flex:1;min-width:0}
+  .call small{
+    display:block;
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    opacity:.85;
+  }
+  .call .num{
+    font-family:'Unbounded',system-ui,sans-serif;
+    font-weight:900;
+    font-size:clamp(24px,6.8vw,32px);
+    letter-spacing:-.01em;
+    display:block;
+    margin-top:4px;
+  }
+
+  @media (max-width:380px){
+    .tiles{grid-template-columns:1fr 1fr}
+    .tile.cream{grid-column:1 / -1}
+    .msg{min-height:116px;padding:20px 8px 16px}
+    .msg svg{width:34px;height:34px}
+    .call-icon{width:42px;height:42px;flex-basis:42px}
+    .call-icon svg{width:20px;height:20px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar" aria-hidden="true"></div>
+
+<main>
+
+  <section class="hero">
+    <h1>
+      <span>Покос.</span>
+      <span class="w2">Спил.</span>
+      <span>Порядок.</span>
+    </h1>
+    <p>Работаем аккуратно, с уважением к вашему участку.</p>
+  </section>
+
+  <section class="cta" aria-label="Связаться в мессенджере">
+    <h2 class="cta-label">Напишите в удобный мессенджер</h2>
+
+    <div class="msgs">
+      <a class="msg wa" href="https://wa.me/375333826222" aria-label="Написать в WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+
+      <a class="msg vb" href="viber://chat?number=%2B375333826222" aria-label="Написать в Viber">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.398.002C9.473.028 5.331.344 3.014 2.467 1.294 4.187.687 6.7.622 9.817s-.141 8.955 5.5 10.544h.005l-.005 2.421s-.036.975.608 1.174c.779.242 1.234-.501 1.979-1.303.407-.44.973-1.091 1.398-1.583 3.86.325 6.824-.417 7.164-.528.778-.253 5.182-.811 5.897-6.658.74-6.027-.36-9.836-2.34-11.556l-.012-.005c-.6-.55-3.004-2.3-8.37-2.32 0 0-.396-.025-1.048-.001zm.064 1.727c.554-.003.912.022.912.022 4.54.017 6.711 1.38 7.22 1.84 1.68 1.429 2.53 4.864 1.908 9.897-.604 4.878-4.17 5.184-4.83 5.397-.28.09-2.882.736-6.155.524 0 0-2.438 2.942-3.2 3.708-.12.124-.26.174-.352.15-.13-.03-.166-.184-.16-.41l.02-4.029c-.001-.003 0 0 0 0-4.775-1.325-4.495-6.127-4.436-8.719.056-2.592.55-4.717 2.003-6.147 1.96-1.77 5.481-2.005 7.107-2.023.03-.002.059-.002.088-.01zm.644 2.694a.506.506 0 00-.508.505.507.507 0 00.508.507A5.31 5.31 0 0115.9 6.924c1.009.997 1.492 2.329 1.484 4.062-.003.277.25.508.527.508.277 0 .5-.23.503-.508a6.257 6.257 0 00-1.79-4.582 6.287 6.287 0 00-4.518-1.98zm-4.19 1.107a.81.81 0 00-.562.191l-.008.007c-.378.35-.676.735-.885 1.13a1.71 1.71 0 00-.122.3 1.014 1.014 0 00-.041.166c-.003.07-.005.14.024.233.104.333.202.667.387 1.138.174.43.4.913.684 1.52.174.37.347.724.609 1.266.137.284.372.609.609.907.237.298.47.568.715.815.245.247.515.481.812.715.297.234.62.47.903.607.541.262.895.436 1.264.609.605.283 1.085.509 1.515.683.47.185.803.283 1.136.387.092.029.16.027.23.023a.99.99 0 00.166-.04c.106-.036.207-.077.3-.123.39-.208.773-.507 1.122-.886l.007-.008a.812.812 0 00.174-.59c-.028-.204-.141-.384-.268-.5a14.78 14.78 0 00-1.34-.97c-.245-.156-.497-.104-.693.069l-.447.557c-.228.276-.647.238-.647.238-3.046-.777-3.86-3.855-3.86-3.855s-.038-.42.238-.647l.556-.448c.17-.196.226-.447.069-.693a14.731 14.731 0 00-.97-1.34.81.81 0 00-.5-.266 1.18 1.18 0 00-.15-.013zm4.187.9a.518.518 0 00-.535.508c-.005.276.225.506.504.52a3.013 3.013 0 012.045.874c.525.56.777 1.29.772 2.22-.002.277.248.507.523.507a.52.52 0 00.509-.508c.007-1.22-.37-2.2-1.07-2.946s-1.692-1.158-2.72-1.173a.475.475 0 00-.029 0zm.328 2.123a.507.507 0 10-.029 1.013c1.014.054 1.502.558 1.56 1.612a.507.507 0 00.535.478.506.506 0 00.478-.533c-.077-1.4-.836-2.197-2.516-2.287-.01 0-.019-.004-.028-.003z"/></svg>
+        <span>Viber</span>
+      </a>
+
+      <!-- TODO: заменить USERNAME на реальный Telegram username, когда клиент определится -->
+      <a class="msg tg" href="https://t.me/USERNAME" aria-label="Написать в Telegram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.247-.024c-.105.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        <span>Telegram</span>
+      </a>
+    </div>
+  </section>
+
+  <a class="call" href="tel:+375333826222">
+    <span class="call-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </span>
+    <span class="call-text">
+      <small>или позвоните</small>
+      <span class="num">+375 33 382-62-22</span>
+    </span>
+  </a>
+
+</main>
+</body>
+</html>
